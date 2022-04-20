@@ -10,7 +10,7 @@ scripts/
 .eslintignore
 .prettierignore
 .prettierrc
-jes.config.js
+jest.config.js
 package.json
 sfdx-project.json
 
