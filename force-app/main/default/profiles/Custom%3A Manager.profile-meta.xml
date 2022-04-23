@@ -9,22 +9,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <loginHours>
-        <fridayEnd>1200</fridayEnd>
-        <fridayStart>660</fridayStart>
-        <mondayEnd>1260</mondayEnd>
-        <mondayStart>600</mondayStart>
-        <saturdayEnd>1200</saturdayEnd>
-        <saturdayStart>660</saturdayStart>
-        <sundayEnd>1080</sundayEnd>
-        <sundayStart>720</sundayStart>
-        <thursdayEnd>1260</thursdayEnd>
-        <thursdayStart>600</thursdayStart>
-        <tuesdayEnd>1260</tuesdayEnd>
-        <tuesdayStart>600</tuesdayStart>
-        <wednesdayEnd>1260</wednesdayEnd>
-        <wednesdayStart>600</wednesdayStart>
-    </loginHours>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
