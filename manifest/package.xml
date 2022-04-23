@@ -42,7 +42,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>StaticResource</name>
+        <name>Role</name>
     </types>
     <version>54.0</version>
 </Package>
