@@ -44,5 +44,9 @@
         <members>*</members>
         <name>Role</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>SharingRules</name>
+    </types>
     <version>54.0</version>
 </Package>

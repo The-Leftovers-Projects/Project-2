@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Cases_to_Sales</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Administrators can share cases to Sales Department</description>
+        <label>Cases to Sales</label>
+        <sharedTo>
+            <roleAndSubordinates>Sales_Manager</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <role>Call_Center_Agent</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>
