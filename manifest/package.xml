@@ -34,7 +34,19 @@
     </types>
     <types>
         <members>*</members>
-        <name>StaticResource</name>
+        <name>ProfileSessionSetting</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ProfilePasswordPolicy</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Role</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>SharingRules</name>
     </types>
     <version>54.0</version>
 </Package>

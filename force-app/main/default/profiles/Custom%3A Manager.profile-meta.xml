@@ -10,20 +10,20 @@
     </classAccesses>
     <custom>true</custom>
     <loginHours>
-        <fridayEnd>1200</fridayEnd>
-        <fridayStart>660</fridayStart>
+        <fridayEnd>1260</fridayEnd>
+        <fridayStart>600</fridayStart>
         <mondayEnd>1260</mondayEnd>
-        <mondayStart>600</mondayStart>
-        <saturdayEnd>1200</saturdayEnd>
-        <saturdayStart>660</saturdayStart>
-        <sundayEnd>1080</sundayEnd>
-        <sundayStart>720</sundayStart>
+        <mondayStart>540</mondayStart>
+        <saturdayEnd>1260</saturdayEnd>
+        <saturdayStart>600</saturdayStart>
+        <sundayEnd>1140</sundayEnd>
+        <sundayStart>660</sundayStart>
         <thursdayEnd>1260</thursdayEnd>
-        <thursdayStart>600</thursdayStart>
+        <thursdayStart>540</thursdayStart>
         <tuesdayEnd>1260</tuesdayEnd>
-        <tuesdayStart>600</tuesdayStart>
+        <tuesdayStart>540</tuesdayStart>
         <wednesdayEnd>1260</wednesdayEnd>
-        <wednesdayStart>600</wednesdayStart>
+        <wednesdayStart>540</wednesdayStart>
     </loginHours>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
