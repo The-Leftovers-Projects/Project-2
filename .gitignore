@@ -12,6 +12,7 @@ scripts/
 .prettierrc
 jest.config.js
 package.json
+package-lock.json
 sfdx-project.json
 
 # Salesforce cache

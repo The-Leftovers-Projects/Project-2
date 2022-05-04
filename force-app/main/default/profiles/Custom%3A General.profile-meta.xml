@@ -18,6 +18,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
+
     <fieldPermissions>
         <editable>true</editable>
         <field>Appointment__c.Description__c</field>
@@ -234,6 +235,7 @@
     <layoutAssignments>
         <layout>Vehicle_Part__c-Vehicle Part Layout</layout>
     </layoutAssignments>
+
     <loginHours>
         <fridayEnd>1200</fridayEnd>
         <fridayStart>660</fridayStart>
