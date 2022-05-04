@@ -9,6 +9,9 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
+    <layoutAssignments>
+        <layout>Appointment__c-Appointment Layout</layout>
+    </layoutAssignments>
     <loginHours>
         <fridayEnd>1200</fridayEnd>
         <fridayStart>660</fridayStart>
