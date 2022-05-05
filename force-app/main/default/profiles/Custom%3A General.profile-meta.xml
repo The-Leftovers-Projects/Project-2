@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
-    <classAccesses>
+    <!-- <classAccesses>
         <apexClass>MyFirstApexRhys</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>MyFirstClassAnna</apexClass>
         <enabled>false</enabled>
-    </classAccesses>
-    <custom>true</custom>
+    </classAccesses> -->
+    <custom>true</custom> 
     <layoutAssignments>
         <layout>Appointment__c-Appointment Layout</layout>
     </layoutAssignments>
