@@ -1,6 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Add_new_case</name>
+        <label>Add new case</label>
+        <locationX>842</locationX>
+        <locationY>878</locationY>
+        <actionName>NewCase</actionName>
+        <actionType>quickAction</actionType>
+        <faultConnector>
+            <targetReference>Don_t_add_case</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>ContactId</name>
+            <value>
+                <elementReference>AppointmentSetup.Contact__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Description</name>
+            <value>
+                <elementReference>AppointmentSetup.Description__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>AppointmentSetup.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <elementReference>Service</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>New_case_contact</name>
+        <label>New case contact</label>
+        <locationX>842</locationX>
+        <locationY>638</locationY>
+        <actionName>NewContact</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>Assign_contact_to_case</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Email</name>
+            <value>
+                <elementReference>contact.value</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>FirstName</name>
+            <value>
+                <elementReference>CustomerName.firstName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>LastName</name>
+            <value>
+                <elementReference>CustomerName.lastName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>AppointmentSetup.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>New_sale</name>
+        <label>New sale</label>
+        <locationX>50</locationX>
+        <locationY>998</locationY>
+        <actionName>NewOpportunity</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>Assign_sale_to_appt</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Name</name>
+            <value>
+                <elementReference>AppointmentSetup.Name</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>AppointmentSetup.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>StageName</name>
+            <value>
+                <elementReference>Collect_info</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>New_sale_contact</name>
+        <label>New sale contact</label>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
+        <actionName>NewContact</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>create_order</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Email</name>
+            <value>
+                <elementReference>contact.value</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>FirstName</name>
+            <value>
+                <elementReference>CustomerName.firstName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>LastName</name>
+            <value>
+                <elementReference>CustomerName.lastName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>AppointmentSetup.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
     <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Assign_contact_to_case</name>
+        <label>Assign contact to case</label>
+        <locationX>842</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_case_contact</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_new_case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assign_contact_to_sale</name>
+        <label>assign contact to sale</label>
+        <locationX>50</locationX>
+        <locationY>878</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_sale_contact</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>New_sale</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign description from flow to record variable for appointments</description>
+        <name>Assign_Description</name>
+        <label>Assign Description</label>
+        <locationX>842</locationX>
+        <locationY>398</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Description</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Sales_or_service</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign Customer name from flow to record variable for appointments</description>
+        <name>Assign_name</name>
+        <label>Assign name</label>
+        <locationX>842</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Name</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CustomerName.firstName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Name</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CustomerName.lastName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Description</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_sale_to_appt</name>
+        <label>Assign sale to appt</label>
+        <locationX>50</locationX>
+        <locationY>1118</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_sale</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Sales_or_service</name>
+        <label>Sales or service</label>
+        <locationX>842</locationX>
+        <locationY>518</locationY>
+        <defaultConnectorLabel>Failed</defaultConnectorLabel>
+        <rules>
+            <name>Sales</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AppointmentSetup.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_sale_contact</targetReference>
+            </connector>
+            <label>Sales</label>
+        </rules>
+        <rules>
+            <name>Service</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AppointmentSetup.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Service</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_case_contact</targetReference>
+            </connector>
+            <label>Service</label>
+        </rules>
+    </decisions>
     <interviewLabel>Appointment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Appointment</label>
     <processMetadataValues>
@@ -22,34 +283,115 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordCreates>
+        <name>create_order</name>
+        <label>create order</label>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
+        <assignRecordIdToReference>CarOrder.Id</assignRecordIdToReference>
+        <connector>
+            <targetReference>assign_contact_to_sale</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>BillToContactId</field>
+            <value>
+                <elementReference>New_sale_contact</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ShipToContactId</field>
+            <value>
+                <elementReference>New_sale_contact</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <elementReference>AppointmentSetup.Type__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Order</object>
+    </recordCreates>
+    <recordRollbacks>
+        <name>Don_t_add_case</name>
+        <label>Don&apos;t add case</label>
+        <locationX>1106</locationX>
+        <locationY>998</locationY>
+    </recordRollbacks>
     <screens>
         <name>Buy_a_Car</name>
         <label>Buy a Car</label>
-        <locationX>176</locationX>
+        <locationX>842</locationX>
         <locationY>158</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Assign_name</targetReference>
+        </connector>
         <fields>
-            <fieldType>ObjectProvided</fieldType>
-            <isRequired>false</isRequired>
-            <objectFieldReference>Car.Description</objectFieldReference>
+            <name>CustomerName</name>
+            <extensionName>flowruntime:name</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>salutationOptions</name>
+                <value>
+                    <stringValue>Mr.,Mrs.,Ms.,Mx.</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>contact</name>
+            <extensionName>flowruntime:email</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
             <fieldType>ObjectProvided</fieldType>
             <isRequired>false</isRequired>
-            <objectFieldReference>Car.Quantity</objectFieldReference>
+            <objectFieldReference>AppointmentSetup.Type__c</objectFieldReference>
         </fields>
         <fields>
             <fieldType>ObjectProvided</fieldType>
             <isRequired>false</isRequired>
-            <objectFieldReference>Car.ServiceDate</objectFieldReference>
+            <objectFieldReference>AppointmentSetup.Time__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>Description</name>
+            <fieldText>Description</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;Please describe what kind of appointment you want to make today.&lt;/p&gt;</helpText>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <stages>
+        <name>Collect_info</name>
+        <isActive>true</isActive>
+        <label>Collect info</label>
+        <stageOrder>0</stageOrder>
+    </stages>
+    <stages>
+        <name>commit_record</name>
+        <isActive>false</isActive>
+        <label>commit record</label>
+        <stageOrder>10</stageOrder>
+    </stages>
+    <stages>
+        <description>generate the variables in system from collected info</description>
+        <name>Generate_variables</name>
+        <isActive>false</isActive>
+        <label>Generate variables</label>
+        <stageOrder>2</stageOrder>
+    </stages>
     <start>
-        <locationX>50</locationX>
+        <locationX>716</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Buy_a_Car</targetReference>
@@ -57,19 +399,19 @@
     </start>
     <status>Draft</status>
     <variables>
-        <name>Car</name>
+        <name>AppointmentSetup</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>OpportunityLineItem</objectType>
+        <objectType>Appointment__c</objectType>
     </variables>
     <variables>
-        <name>CarProduct</name>
+        <name>CarOrder</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Product2</objectType>
+        <objectType>Order</objectType>
     </variables>
 </Flow>
