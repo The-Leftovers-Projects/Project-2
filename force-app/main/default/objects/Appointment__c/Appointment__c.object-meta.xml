@@ -143,26 +143,17 @@
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-
     <description>Custom object for tracking sales and service appointments</description>
-
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
-
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-
-    <enableSearch>false</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
-
     <label>Appointment</label>
     <nameField>
         <label>Appointment Name</label>
@@ -170,14 +161,9 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Appointments</pluralLabel>
-
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <startsWith>Vowel</startsWith>
-
-    <searchLayouts></searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
-
     <visibility>Public</visibility>
 </CustomObject>
