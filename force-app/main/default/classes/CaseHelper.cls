@@ -1,9 +1,9 @@
 public class CaseHelper {
     
     // trigger logic
-    public static void PreventDeletion(List<Case> caseResults) {
+    public static void PreventDeletion(List<Case> cases) {
         // grab only the cases that are in progress
-        caseResults = [SELECT Status FROM Case WHERE NOT Status = 'Closed'];
+        List<Case> caseResults = [SELECT Status FROM Case WHERE NOT Status = 'Closed'];
         
         // for each case, add an error
         for (Case c : caseResults) {
@@ -11,9 +11,4 @@ public class CaseHelper {
         }
     }
 
-    // testing methods
-    @TestSetup
-    static void makeData(){
-        DataFactory.insertCases(5);
-    }
 }

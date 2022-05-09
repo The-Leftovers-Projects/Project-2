@@ -6,14 +6,10 @@ public class DataFactory {
         List<Case> newCases = new List<Case>();
 
         for (Integer i = 0; i < casesTotal; i++) {
-            newCases.add(new Case(
-                IsClosed = false,
-                CaseNumber = i,
-                Description = 'Test case ' + i
-            ));
+            newCases.add(new Case(Description = 'Test case ' + i));
         }
 
-        return newCases;
+        Insert newCases;
     }
 
 }
