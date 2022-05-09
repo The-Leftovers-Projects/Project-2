@@ -1,3 +1,3 @@
-trigger CaseTrigger on Case (before insert) {
-
+trigger CaseTrigger on Case (before delete) {
+  CaseHelper.PreventDeletion(trigger.old);
 }
