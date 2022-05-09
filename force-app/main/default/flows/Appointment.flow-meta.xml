@@ -255,6 +255,9 @@
         <label>Create appointment</label>
         <locationX>578</locationX>
         <locationY>1478</locationY>
+        <connector>
+            <targetReference>Success</targetReference>
+        </connector>
         <faultConnector>
             <targetReference>Don_t_add_appointment</targetReference>
         </faultConnector>
@@ -278,6 +281,9 @@
         <label>Don&apos;t add appointment</label>
         <locationX>1370</locationX>
         <locationY>1598</locationY>
+        <connector>
+            <targetReference>Error</targetReference>
+        </connector>
     </recordRollbacks>
     <recordRollbacks>
         <name>Don_t_add_order</name>
@@ -333,6 +339,71 @@
             <fieldText>Description</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <helpText>&lt;p&gt;Please describe what kind of appointment you want to make today.&lt;/p&gt;</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <helpText>&lt;p&gt;You can schedule an appointment for buying a car or to repair your vehicle here!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Select &quot;Sales&quot; for sales-related events, such as trying out cars or negotiating prices.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Select &quot;Services&quot; for support-related events, such as warranty coverage.&lt;/p&gt;</helpText>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error</name>
+        <label>Error</label>
+        <locationX>1370</locationX>
+        <locationY>1718</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Error_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ErrorMessage</name>
+                    <fieldText>&lt;p&gt;We&apos;re sorry! Something went wrong while scheduling your appointment. Please try again later.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Success</name>
+        <label>Success</label>
+        <locationX>578</locationX>
+        <locationY>1598</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Success_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Success_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>SuccessMessage</name>
+                    <fieldText>&lt;p&gt;Successfully scheduled an appointment! See you soon!&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
