@@ -3,7 +3,7 @@ private class CaseTester {
 
     @TestSetup
     static void makeData(){
-        DataFactory.insertCases(5);
+        DataFactory.insertCases(6);
     }
 
     @IsTest
@@ -67,6 +67,8 @@ private class CaseTester {
         List<Case> caseNotDelete = new List<Case>();
         List<Case> caseDelete = new List<Case>();
 
+        // loop through the query and update cases with various statuses
+        // add cases to appropriate lists
         for (Case c : caseBulk) {
             switch on c.Subject {
                 when 'TestCase0' {
@@ -94,18 +96,20 @@ private class CaseTester {
                     caseDelete.add(test3);
                 }
                 when else {
-                    c.Status = 'Contacting';
-                    update c;
-                    caseNotDelete.add(c);
+                    Case testExtra = [SELECT Status FROM Case LIMIT 2];
+                    testExtra.Status = 'Contacting';
+                    update testExtra;
+                    caseNotDelete.add(testExtra);
                 }
             }
         }
         
         Test.startTest();
         Database.DeleteResult[] resultNeg = Database.delete(caseNotDelete, false);
-        // Database.DeleteResult[] resultPos = Database.delete(caseDelete, true);
+        Database.DeleteResult[] resultPos = Database.delete(caseDelete, true);
         Test.stopTest();
         
+        // loop through each list and make sure the results are as expected
         for (Database.DeleteResult caseNeg : resultNeg) {
             if (!caseNeg.isSuccess()) {
                 System.assertEquals(false, caseNeg.isSuccess());
@@ -114,13 +118,12 @@ private class CaseTester {
             }
         }
 
-        // for some reason the lists aren't being added into i think?
-        // for (Database.DeleteResult casePos : resultPos) {
-        //     if (casePos.isSuccess()) {
-        //         System.assertEquals(true, casePos.isSuccess());
-        //     } else {
-        //         System.assertNotEquals(true, casePos.isSuccess());
-        //     }
-        // }
+        for (Database.DeleteResult casePos : resultPos) {
+            if (casePos.isSuccess()) {
+                System.assertEquals(true, casePos.isSuccess());
+            } else {
+                System.assertNotEquals(true, casePos.isSuccess());
+            }
+        }
     }
 }
