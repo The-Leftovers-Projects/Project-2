@@ -3,7 +3,7 @@ public class CaseHelper {
     public static void PreventDeletion(List<Case> cases) {
         // for each case, add an error
         for (Case c : cases) {
-            if (c.Status != 'Closed') {
+            if (!c.Status.contains('Closed')) {
                 c.addError('Case is still in progress and cannot be deleted.');
             }
         }

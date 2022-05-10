@@ -96,10 +96,9 @@ private class CaseTester {
                     caseDelete.add(test3);
                 }
                 when else {
-                    Case testExtra = [SELECT Status FROM Case LIMIT 2];
-                    testExtra.Status = 'Contacting';
-                    update testExtra;
-                    caseNotDelete.add(testExtra);
+                    c.Status = 'Contacting';
+                    update c;
+                    caseNotDelete.add(c);
                 }
             }
         }
@@ -123,6 +122,8 @@ private class CaseTester {
                 System.assertEquals(true, casePos.isSuccess());
             } else {
                 System.assertNotEquals(true, casePos.isSuccess());
+                System.assert(casePos.getErrors().size() > 0);
+                System.assertEquals('Case is still in progress and cannot be deleted.', casePos.getErrors()[0].getMessage());
             }
         }
     }
