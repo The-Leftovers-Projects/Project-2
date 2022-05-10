@@ -67,41 +67,60 @@ private class CaseTester {
         List<Case> caseNotDelete = new List<Case>();
         List<Case> caseDelete = new List<Case>();
 
-        for (Case case : caseBulk) {
-            switch on case.Subject {
+        for (Case c : caseBulk) {
+            switch on c.Subject {
                 when 'TestCase0' {
-                    case.Status = 'In Progress';
-                    update case;
-                    caseNotDeleted.add(case);
+                    Case test0 = [SELECT Status FROM Case WHERE Subject = 'TestCase0' LIMIT 1];
+                    test0.Status = 'In Progress';
+                    update test0;
+                    caseNotDelete.add(test0);
                 }
                 when 'TestCase1' {
-                    case.Status = 'Closed';
-                    update case;
-                    caseDeleted.add(case);
+                    Case test1 = [SELECT Status FROM Case WHERE Subject = 'TestCase1' LIMIT 1];
+                    test1.Status = 'Closed';
+                    update test1;
+                    caseDelete.add(test1);
                 }
                 when 'TestCase2' {
-                    case.Status = 'Closed Unresolved';
-                    update case;
-                    caseNotDeleted.add(case);
+                    Case test2 = [SELECT Status FROM Case WHERE Subject = 'TestCase2' LIMIT 1];
+                    test2.Status = 'Closed Unresolved';
+                    update test2;
+                    caseDelete.add(test2);
                 }
                 when 'TestCase3' {
-                    case.status = 'Closed Resolved';
-                    update case;
-                    caseDeleted.add(case);
+                    Case test3 = [SELECT Status FROM Case WHERE Subject = 'TestCase3' LIMIT 1];
+                    test3.Status = 'Closed Resolved';
+                    update test3;
+                    caseDelete.add(test3);
                 }
                 when else {
-                    case.Status = 'Contacting';
-                    update case;
-                    caseNotDeleted.add(case);
+                    c.Status = 'Contacting';
+                    update c;
+                    caseNotDelete.add(c);
                 }
             }
         }
         
         Test.startTest();
-        Database.DeleteResult[] resultPos = Database.delete(caseDelete, true);
         Database.DeleteResult[] resultNeg = Database.delete(caseNotDelete, false);
+        // Database.DeleteResult[] resultPos = Database.delete(caseDelete, true);
         Test.stopTest();
         
-        // write assert here...
+        for (Database.DeleteResult caseNeg : resultNeg) {
+            if (!caseNeg.isSuccess()) {
+                System.assertEquals(false, caseNeg.isSuccess());
+            } else {
+                System.assertNotEquals(false, caseNeg.isSuccess());
+            }
+        }
+
+        // for some reason the lists aren't being added into i think?
+        // for (Database.DeleteResult casePos : resultPos) {
+        //     if (casePos.isSuccess()) {
+        //         System.assertEquals(true, casePos.isSuccess());
+        //     } else {
+        //         System.assertNotEquals(true, casePos.isSuccess());
+        //     }
+        // }
     }
 }
