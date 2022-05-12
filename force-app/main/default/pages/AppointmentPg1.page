@@ -1,0 +1,13 @@
+<apex:page controller="ApptController">
+  <apex:pageBlock>
+    <apex:sectionHeader>Welcome! Let's get you started.</apex:sectionHeader>
+    <apex:form>
+      <p>First Name: <apex:inputField></apex:inputField></p>
+      <p>Last Name: <apex:inputField></apex:inputField></p>
+      <p>Email: <apex:inputField></apex:inputField></p>
+      <p>Type:</p>
+      <apex:selectList></apex:selectList>
+      <apex:commandLink></apex:commandLink>
+    </apex:form>
+  </apex:pageBlock>
+</apex:page>
