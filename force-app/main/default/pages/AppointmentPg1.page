@@ -1,3 +1,10 @@
+<!--
+  rhys kim
+  05.12.2022
+  first page for appointment wizard
+  ask users to input data to be passed along
+-->
+
 <apex:page controller="ApptController">
   <apex:pageBlock>
     <apex:sectionHeader>Welcome! Let's get you started.</apex:sectionHeader>

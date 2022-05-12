@@ -1,3 +1,8 @@
+// rhys kim
+// 05.12.2022
+// project 2
+// create unit test suite for case trigger
+
 @isTest
 private class CaseTester {
 

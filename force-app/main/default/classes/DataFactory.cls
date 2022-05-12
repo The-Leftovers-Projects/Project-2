@@ -1,3 +1,8 @@
+// rhys kim
+// 05.12.2022
+// project 2
+// create a class for specifically generating test data
+
 @isTest
 public class DataFactory {
     
