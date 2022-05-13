@@ -5,6 +5,6 @@
   do further actions
  -->
 
-<apex:page controller="ApptController">
+<apex:page controller="ApptWizController">
  
 </apex:page>
