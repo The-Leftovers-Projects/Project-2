@@ -13,7 +13,7 @@ trigger ProductTrigger on Product2 (before insert, before update, before delete,
             
         }
         when AFTER_INSERT {
-            // ProductHelper.NewInspectionOrder(trigger.new);
+            ProductHelper.NewInspectionOrder(trigger.new);
         }
         when AFTER_UPDATE {
             
