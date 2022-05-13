@@ -1,0 +1,10 @@
+custom event: customer makes an appointment
+
+vf page^: button to start an appointment -> anna
+  - button fires platform event
+
+controller for vf page^ listens for platform event -> david
+
+process* listens for platform event to send email to manager -> rhys
+
+appointment wizard can listen for platform event and fire off process*
