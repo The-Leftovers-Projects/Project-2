@@ -1,3 +1,8 @@
+// rhys kim
+// 05.12.2022
+// project 2
+// create trigger to prevent case deletion
+
 public class CaseHelper {
     // trigger logic
     public static void PreventDeletion(List<Case> cases) {

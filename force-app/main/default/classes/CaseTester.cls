@@ -1,20 +1,18 @@
+// rhys kim
+// 05.12.2022
+// project 2
+// create unit test suite for case trigger
+
 @isTest
 private class CaseTester {
 
-    @TestSetup
-    static void makeData(){
-        DataFactory.insertCases(6);
-    }
-
     @IsTest
     static void testDeleteCaseWip(){
-        Case caseWip = [SELECT Status FROM Case WHERE Subject = 'TestCase0' LIMIT 1];
-        caseWip.Status = 'In Progress';
-        update caseWip;
+        Case[] caseWip = DataFactory.insertCases(1, 'In Progress');
 
         Test.startTest();
         // go into the database and delete the case
-        Database.DeleteResult result = Database.delete(caseWip, false);
+        Database.DeleteResult result = Database.delete(caseWip[0], false);
         Test.stopTest();
 
         // the result should be a fail
@@ -26,15 +24,11 @@ private class CaseTester {
 
     @IsTest
     static void testDeleteCaseClosed() {
-        Case caseClosed = [SELECT Status FROM Case WHERE Subject = 'TestCase0' LIMIT 1];
-        // make sure it hasn't been updated from earlier test methods
-        System.assertEquals('New', caseClosed.Status);
-        caseClosed.Status = 'Closed';
-        update caseClosed;
+        Case[] caseClosed = DataFactory.insertCases(1, 'Closed');
 
         Test.startTest();
         // this SHOULD delete the case
-        Database.DeleteResult result = Database.delete(caseClosed, true);
+        Database.DeleteResult result = Database.delete(caseClosed[0], true);
         Test.stopTest();
 
         // the result should be a success
@@ -43,14 +37,10 @@ private class CaseTester {
 
     @IsTest
     static void testDeleteCaseUnknown(){
-        Case caseUnknown = [SELECT Status FROM Case WHERE Subject = 'TestCase0' LIMIT 1];
-        // make sure it hasn't been updated from earlier test methods
-        System.assertEquals('New', caseUnknown.Status);
-        caseUnknown.Status = null;
-        update caseUnknown;
+        Case[] caseUnknown = DataFactory.insertCases(1, null);
 
         Test.startTest();
-        Database.DeleteResult result = Database.delete(caseUnknown, false);
+        Database.DeleteResult result = Database.delete(caseUnknown[0], false);
         Test.stopTest();
         
         // the result should be a fail, even if status is unknown
@@ -61,7 +51,7 @@ private class CaseTester {
 
     @IsTest
     static void testDeleteCaseBulk(){
-        List<Case> caseBulk = [SELECT Subject, Status FROM Case LIMIT 5];
+        List<Case> caseBulk = DataFactory.insertCases(5, null);
         
         // create new lists to test against
         List<Case> caseNotDelete = new List<Case>();
@@ -72,25 +62,25 @@ private class CaseTester {
         for (Case c : caseBulk) {
             switch on c.Subject {
                 when 'TestCase0' {
-                    Case test0 = [SELECT Status FROM Case WHERE Subject = 'TestCase0' LIMIT 1];
+                    Case test0 = caseBulk[0];
                     test0.Status = 'In Progress';
                     update test0;
                     caseNotDelete.add(test0);
                 }
                 when 'TestCase1' {
-                    Case test1 = [SELECT Status FROM Case WHERE Subject = 'TestCase1' LIMIT 1];
+                    Case test1 = caseBulk[1];
                     test1.Status = 'Closed';
                     update test1;
                     caseDelete.add(test1);
                 }
                 when 'TestCase2' {
-                    Case test2 = [SELECT Status FROM Case WHERE Subject = 'TestCase2' LIMIT 1];
+                    Case test2 = caseBulk[2];
                     test2.Status = 'Closed Unresolved';
                     update test2;
                     caseDelete.add(test2);
                 }
                 when 'TestCase3' {
-                    Case test3 = [SELECT Status FROM Case WHERE Subject = 'TestCase3' LIMIT 1];
+                    Case test3 = caseBulk[3];
                     test3.Status = 'Closed Resolved';
                     update test3;
                     caseDelete.add(test3);
