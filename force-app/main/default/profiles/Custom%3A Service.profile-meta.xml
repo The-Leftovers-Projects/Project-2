@@ -6,19 +6,22 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
-        <apexClass>MyFirstApexRhys</apexClass>
+        <apexClass>CaseHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MyFirstClassAnna</apexClass>
+        <apexClass>CaseTester</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TestClass</apexClass>
+        <apexClass>DataFactory</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ProductHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-
     <fieldPermissions>
         <editable>true</editable>
         <field>Appointment__c.Description__c</field>
@@ -227,11 +230,16 @@
         <layout>CaseClose-Close Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Inspection_Order__c-Inspection Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Service_Part__c-Service Part Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Vehicle_Part__c-Vehicle Part Layout</layout>
-
     </layoutAssignments>
     <loginHours>
         <fridayEnd>1140</fridayEnd>
@@ -258,6 +266,10 @@
         <object>Case</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>Appointment</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Appointment__c.Sales_Appointment</recordType>
