@@ -64,4 +64,20 @@
         <name>Dealership</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>standard__Commerce</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Vaquish Group</name>
+        <type>Network</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Vanquish Community</name>
+        <type>Network</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>vanquishcommunity2</name>
+        <type>Network</type>
+    </appMenuItems>
 </AppMenu>
