@@ -1,0 +1,10 @@
+<!-- 
+  rhys kim
+  05.12.2022
+  second page for wizard
+  do further actions
+ -->
+
+<apex:page controller="ApptWizController">
+ 
+</apex:page>

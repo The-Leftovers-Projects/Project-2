@@ -27,10 +27,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>MyFirstApexRhys</apexClass>
+        <apexClass>CaseHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MyFirstClassAnna</apexClass>
+        <apexClass>CaseTester</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -39,6 +40,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TestClass</apexClass>
+        <apexClass>DataFactory</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ProductHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -228,6 +234,67 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Event.Description</field>
+        <field>Opportunity.AccountId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Amount</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.CampaignId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.ContractId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Description</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.ExpectedRevenue</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.IsPrivate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.LeadSource</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.NextStep</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Probability</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.TotalOpportunityQuantity</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Type</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vehicle_Part__c.Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -293,10 +360,15 @@
         <layout>CaseClose-Close Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Inspection_Order__c-Inspection Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Opportunity-Opportunity Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>PricebookEntry-Price Book Entry Layout</layout>
+        <layout>Opportunity-Opportunity Layout</layout>
+        <recordType>Opportunity.Car_Sale</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Service_Part__c-Service Part Layout</layout>
@@ -328,6 +400,24 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>NewApptEvent__e</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Opportunity</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Service_Part__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -342,6 +432,7 @@
     </objectPermissions>
     <pageAccesses>
         <apexPage>ApptView</apexPage>
+        <apexPage>Appointment</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
@@ -352,6 +443,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Appointment__c.Service_Appointment</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Opportunity.Car_Sale</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
@@ -376,6 +472,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-home</tab>
+        <tab>standard-Opportunity</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>

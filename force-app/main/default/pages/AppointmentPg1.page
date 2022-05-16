@@ -1,0 +1,20 @@
+<!--
+  rhys kim
+  05.12.2022
+  first page for appointment wizard
+  ask users to input data to be passed along
+-->
+
+<apex:page controller="ApptWizController">
+  <apex:pageBlock>
+    <apex:sectionHeader>Welcome! Let's get you started.</apex:sectionHeader>
+    <apex:form>
+      <p>First Name: <apex:inputField></apex:inputField></p>
+      <p>Last Name: <apex:inputField></apex:inputField></p>
+      <p>Email: <apex:inputField></apex:inputField></p>
+      <p>Type:</p>
+      <apex:selectList></apex:selectList>
+      <apex:commandLink></apex:commandLink>
+    </apex:form>
+  </apex:pageBlock>
+</apex:page>

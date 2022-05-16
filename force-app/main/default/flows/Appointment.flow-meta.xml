@@ -1,6 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Add_new_case</name>
+        <label>Add new case</label>
+        <locationX>578</locationX>
+        <locationY>878</locationY>
+        <actionName>NewCase</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>New_order</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Don_t_add_case</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>ContactId</name>
+            <value>
+                <elementReference>AppointmentSetup.Contact__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Description</name>
+            <value>
+                <elementReference>AppointmentSetup.Description__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>AppointmentSetup.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <elementReference>Service</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>New_contact</name>
+        <label>New contact</label>
+        <locationX>710</locationX>
+        <locationY>518</locationY>
+        <actionName>NewContact</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>Assign_contact_to_appointment</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Don_t_add_case_0</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Email</name>
+            <value>
+                <elementReference>contact.value</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>FirstName</name>
+            <value>
+                <elementReference>CustomerName.firstName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>LastName</name>
+            <value>
+                <elementReference>CustomerName.lastName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>AppointmentSetup.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>New_potential_sale</name>
+        <label>New potential sale</label>
+        <locationX>50</locationX>
+        <locationY>878</locationY>
+        <actionName>NewOpportunity</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>assign_opportunity_to_appointment</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Don_t_add_sale</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Name</name>
+            <value>
+                <elementReference>AppointmentSetup.Name</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>AppointmentSetup.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>StageName</name>
+            <value>
+                <elementReference>Collect_info</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
     <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Assign_contact_to_appointment</name>
+        <label>Assign contact to appointment</label>
+        <locationX>710</locationX>
+        <locationY>638</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_contact</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Sales_or_service</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign description from flow to record variable for appointments</description>
+        <name>Assign_Description</name>
+        <label>Assign Description</label>
+        <locationX>710</locationX>
+        <locationY>398</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Description</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>New_contact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign Customer name from flow to record variable for appointments</description>
+        <name>Assign_name</name>
+        <label>Assign name</label>
+        <locationX>710</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Name</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CustomerName.firstName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Name</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>CustomerName.lastName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Description</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assign_opportunity_to_appointment</name>
+        <label>assign opportunity to appointment</label>
+        <locationX>50</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_potential_sale</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_appointment</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>assign newly created id to carorder id</description>
+        <name>order_id_to_new_order</name>
+        <label>order id to new_order</label>
+        <locationX>578</locationX>
+        <locationY>1118</locationY>
+        <assignmentItems>
+            <assignToReference>CarOrder.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_order</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>AppointmentSetup.Order__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>New_order</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_appointment</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Sales_or_service</name>
+        <label>Sales or service</label>
+        <locationX>710</locationX>
+        <locationY>758</locationY>
+        <defaultConnector>
+            <targetReference>Don_t_do_anything</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Failed</defaultConnectorLabel>
+        <rules>
+            <name>Sales</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AppointmentSetup.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_potential_sale</targetReference>
+            </connector>
+            <label>Sales</label>
+        </rules>
+        <rules>
+            <name>Service</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AppointmentSetup.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Service</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_new_case</targetReference>
+            </connector>
+            <label>Service</label>
+        </rules>
+    </decisions>
     <interviewLabel>Appointment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Appointment</label>
     <processMetadataValues>
@@ -22,54 +270,393 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_appointment</name>
+        <label>Create appointment</label>
+        <locationX>710</locationX>
+        <locationY>1598</locationY>
+        <connector>
+            <targetReference>Success</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Don_t_add_appointment</targetReference>
+        </faultConnector>
+        <inputReference>AppointmentSetup</inputReference>
+    </recordCreates>
+    <recordCreates>
+        <name>New_order</name>
+        <label>New order</label>
+        <locationX>578</locationX>
+        <locationY>998</locationY>
+        <connector>
+            <targetReference>order_id_to_new_order</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Don_t_add_order</targetReference>
+        </faultConnector>
+        <inputReference>CarOrder</inputReference>
+    </recordCreates>
+    <recordRollbacks>
+        <name>Don_t_add_appointment</name>
+        <label>Don&apos;t add appointment</label>
+        <locationX>1634</locationX>
+        <locationY>1718</locationY>
+        <connector>
+            <targetReference>Error</targetReference>
+        </connector>
+    </recordRollbacks>
+    <recordRollbacks>
+        <name>Don_t_add_case</name>
+        <label>Don&apos;t add case</label>
+        <locationX>1106</locationX>
+        <locationY>998</locationY>
+        <connector>
+            <targetReference>Error_0_0</targetReference>
+        </connector>
+    </recordRollbacks>
+    <recordRollbacks>
+        <name>Don_t_add_case_0</name>
+        <label>Don&apos;t add case</label>
+        <locationX>1898</locationX>
+        <locationY>638</locationY>
+        <connector>
+            <targetReference>Error_0_0_0_0_0</targetReference>
+        </connector>
+    </recordRollbacks>
+    <recordRollbacks>
+        <name>Don_t_add_order</name>
+        <label>Don&apos;t add order</label>
+        <locationX>842</locationX>
+        <locationY>1118</locationY>
+        <connector>
+            <targetReference>Error_0_0_0</targetReference>
+        </connector>
+    </recordRollbacks>
+    <recordRollbacks>
+        <name>Don_t_add_sale</name>
+        <label>Don&apos;t add sale</label>
+        <locationX>314</locationX>
+        <locationY>998</locationY>
+        <connector>
+            <targetReference>Error_0_0_0_0</targetReference>
+        </connector>
+    </recordRollbacks>
+    <recordRollbacks>
+        <description>the decision got confused, so don&apos;t add a record</description>
+        <name>Don_t_do_anything</name>
+        <label>Don&apos;t do anything</label>
+        <locationX>1370</locationX>
+        <locationY>878</locationY>
+        <connector>
+            <targetReference>Error_0</targetReference>
+        </connector>
+    </recordRollbacks>
     <screens>
         <name>Buy_a_Car</name>
         <label>Buy a Car</label>
-        <locationX>176</locationX>
+        <locationX>710</locationX>
         <locationY>158</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Assign_name</targetReference>
+        </connector>
         <fields>
-            <fieldType>ObjectProvided</fieldType>
-            <isRequired>false</isRequired>
-            <objectFieldReference>Car.Description</objectFieldReference>
+            <name>CustomerName</name>
+            <extensionName>flowruntime:name</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>salutationOptions</name>
+                <value>
+                    <stringValue>Mr.,Mrs.,Ms.,Mx.</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>contact</name>
+            <extensionName>flowruntime:email</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
             <fieldType>ObjectProvided</fieldType>
             <isRequired>false</isRequired>
-            <objectFieldReference>Car.Quantity</objectFieldReference>
+            <objectFieldReference>AppointmentSetup.Type__c</objectFieldReference>
         </fields>
         <fields>
             <fieldType>ObjectProvided</fieldType>
             <isRequired>false</isRequired>
-            <objectFieldReference>Car.ServiceDate</objectFieldReference>
+            <objectFieldReference>AppointmentSetup.Time__c</objectFieldReference>
+        </fields>
+        <fields>
+            <name>Description</name>
+            <fieldText>Description</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <helpText>&lt;p&gt;Please describe what kind of appointment you want to make today.&lt;/p&gt;</helpText>
+            <isRequired>false</isRequired>
+        </fields>
+        <helpText>&lt;p&gt;You can schedule an appointment for buying a car or to repair your vehicle here!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Select &quot;Sales&quot; for sales-related events, such as trying out cars or negotiating prices.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Select &quot;Services&quot; for support-related events, such as warranty coverage.&lt;/p&gt;</helpText>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error</name>
+        <label>Error</label>
+        <locationX>1634</locationX>
+        <locationY>1838</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Error_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ErrorMessage</name>
+                    <fieldText>&lt;p&gt;We&apos;re sorry! Something went wrong while scheduling your appointment. Please try again later.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <name>Error_0</name>
+        <label>Error</label>
+        <locationX>1370</locationX>
+        <locationY>998</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_0_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Error_0_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ErrorMessage_0</name>
+                    <fieldText>&lt;p&gt;We&apos;re sorry! Something went wrong while scheduling your appointment. Please try again later.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error_0_0</name>
+        <label>Error</label>
+        <locationX>1106</locationX>
+        <locationY>1118</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_0_0_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Error_0_0_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ErrorMessage_0_0</name>
+                    <fieldText>&lt;p&gt;We&apos;re sorry! Something went wrong while scheduling your appointment. Please try again later.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error_0_0_0</name>
+        <label>Error</label>
+        <locationX>842</locationX>
+        <locationY>1238</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_0_0_0_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Error_0_0_0_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ErrorMessage_0_0_0</name>
+                    <fieldText>&lt;p&gt;We&apos;re sorry! Something went wrong while scheduling your appointment. Please try again later.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error_0_0_0_0</name>
+        <label>Error</label>
+        <locationX>314</locationX>
+        <locationY>1118</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_0_0_0_0_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Error_0_0_0_0_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ErrorMessage_0_0_0_0</name>
+                    <fieldText>&lt;p&gt;We&apos;re sorry! Something went wrong while scheduling your appointment. Please try again later.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Error_0_0_0_0_0</name>
+        <label>Error</label>
+        <locationX>1898</locationX>
+        <locationY>758</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error_0_Section1_0</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Error_0_Section1_Column1_0</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ErrorMessage_0_0_0_0_0</name>
+                    <fieldText>&lt;p&gt;We&apos;re sorry! Something went wrong while scheduling your appointment. Please try again later.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Success</name>
+        <label>Success</label>
+        <locationX>710</locationX>
+        <locationY>1718</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Success_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Success_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>SuccessMessage</name>
+                    <fieldText>&lt;p&gt;Successfully scheduled an appointment! See you soon!&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <stages>
+        <name>Collect_info</name>
+        <isActive>true</isActive>
+        <label>Collect info</label>
+        <stageOrder>0</stageOrder>
+    </stages>
     <start>
-        <locationX>50</locationX>
+        <locationX>584</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Buy_a_Car</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
-        <name>Car</name>
+        <name>AppointmentSetup</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>OpportunityLineItem</objectType>
+        <objectType>Appointment__c</objectType>
     </variables>
     <variables>
-        <name>CarProduct</name>
+        <name>CarOrder</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Product2</objectType>
+        <objectType>Order</objectType>
     </variables>
 </Flow>

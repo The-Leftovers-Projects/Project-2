@@ -1,0 +1,102 @@
+{
+  "appPageId" : "6e843c10-6696-4189-9a39-0e1a11f0173f",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "id" : "8fceb3e0-ea5b-42f6-8a78-b34d3669503e",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"f862d502-7e27-49ae-b576-409ab508198e\",\"columns\":[{\"UUID\":\"dcfae421-ebe1-4fee-be2f-6722432a744f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "f862d502-7e27-49ae-b576-409ab508198e",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "bannerLinkHref" : "javascript:void(0)",
+            "bannerLinkTitle" : "Shop Now",
+            "cmsPickerState" : "{\"title\":\"\",\"alt\":\"\",\"url\":\"https://stimg.cardekho.com/images/carexteriorimages/930x620/Koenigsegg/Koenigsegg-Agera/1439/front-left-side-47.jpg\",\"isFromCms\":false}",
+            "displayBannerLinkAsButton" : true,
+            "heroTextPosition" : "center",
+            "opacity" : 5,
+            "overlay" : false,
+            "showBannerLink" : false,
+            "slogan" : "",
+            "sloganColor" : "#fff",
+            "title" : "",
+            "titleColor" : "#fff"
+          },
+          "componentName" : "b2c_lite_commerce:heroBannerUi",
+          "id" : "db5daf7c-2977-4a8f-ae08-0fdfd9c3bbf6",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "browseStep" : 3,
+            "headerText" : "Shop By Category",
+            "pageSize" : 6
+          },
+          "componentName" : "b2c_lite_commerce:shopCategory",
+          "id" : "82dd1439-f188-41a5-bd59-f930a2141a6a",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "dcfae421-ebe1-4fee-be2f-6722432a744f",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"23bdd7bc-df7d-4262-bc09-82666bdd0886\",\"columns\":[{\"UUID\":\"622dbb2a-2a71-4c2f-ba51-2554a643e97b\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "23bdd7bc-df7d-4262-bc09-82666bdd0886",
+      "regions" : [ {
+        "id" : "622dbb2a-2a71-4c2f-ba51-2554a643e97b",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "3c5b698e-1dfd-496b-82df-a7acc1c85f28",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Home",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "1fd6e7af-ea31-434e-b9f2-ad78ab355c65",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "17fdef61-89c3-4a60-bc7a-81a74198f004",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}
