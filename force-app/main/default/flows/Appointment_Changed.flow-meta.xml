@@ -15,7 +15,7 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <apiVersion>55.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <name>email_info</name>
         <label>email info</label>

@@ -26,7 +26,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MyFirstApexRhys</apexClass>
         <apexClass>CaseHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -39,7 +38,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TestClass</apexClass>
         <apexClass>DataFactory</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -233,7 +231,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Event.Description</field>
         <field>Opportunity.AccountId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -363,10 +360,9 @@
         <layout>Inspection_Order__c-Inspection Order Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout</layout>
+        <layout>PricebookEntry-Price Book Entry Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>PricebookEntry-Price Book Entry Layout</layout>
         <layout>Opportunity-Opportunity Layout</layout>
         <recordType>Opportunity.Car_Sale</recordType>
     </layoutAssignments>
@@ -432,7 +428,6 @@
     </objectPermissions>
     <pageAccesses>
         <apexPage>ApptView</apexPage>
-        <apexPage>Appointment</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
@@ -467,11 +462,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-Event</tab>
+        <tab>standard-home</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
-        <tab>standard-home</tab>
         <tab>standard-Opportunity</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
