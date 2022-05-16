@@ -4,15 +4,6 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Salesperson</label>
-    <lookupFilter>
-        <active>true</active>
-        <filterItems>
-            <field>User.Profile.Name</field>
-            <operation>equals</operation>
-            <value>Custom: Sales Profile</value>
-        </filterItems>
-        <isOptional>false</isOptional>
-    </lookupFilter>
     <referenceTo>User</referenceTo>
     <relationshipName>Appointments</relationshipName>
     <required>false</required>
