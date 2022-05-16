@@ -1,0 +1,18 @@
+<apex:page controller="ApptController" >
+	<apex:form >
+        <apex:pageBlock >
+            <apex:outputLabel value="  Sales Appointment Book By Date        " />
+            <apex:commandButton action="{!backADay}" value="<<  " />
+            <apex:commandButton action="{!apptToday}" value="  Today  " />
+            <apex:commandButton action="{!fwdADay}" value="  >>" />
+            <apex:outputLabel value="       (show appointments for today or scroll through days starting from today)" />
+            <apex:commandButton action="{!reset}" value=" Reset " />
+            <apex:pageBlockTable value="{!salesByDate}" var="col">
+                <apex:column value="{!col.Time__c}" />
+                <apex:column value="{!col.Salesperson__c}" />
+                <apex:column value="{!col.Contact__c}" />
+                <apex:column value="{!col.Description__c}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

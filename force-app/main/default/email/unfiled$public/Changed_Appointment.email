@@ -1,0 +1,5 @@
+{!Appointment__c.CreatedBy}:
+
+Please note that your appointment with {!Appointment__c.Contact__c} has changed.
+
+ If you did not initiate this change, then please view your Salesforce appointments for more details.

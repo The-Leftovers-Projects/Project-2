@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>alert that an appointment has changed</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Changed Appointment</name>
+    <style>none</style>
+    <subject>Appointment Change</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
