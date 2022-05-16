@@ -2,6 +2,10 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>*</members>
+        <name>AnimationRule</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -14,11 +18,15 @@
     </types>
     <types>
         <members>*</members>
-        <name>ApexTestSuite</name>
+        <name>ApexTrigger</name>
     </types>
     <types>
         <members>*</members>
-        <name>ApexTrigger</name>
+        <name>AppMenu</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Audience</name>
     </types>
     <types>
         <members>*</members>
@@ -26,7 +34,63 @@
     </types>
     <types>
         <members>*</members>
+        <name>BrandingSet</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ContentAsset</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CspTrustedSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomIndex</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>FieldRestrictionRule</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Flow</name>
     </types>
     <types>
         <members>*</members>
@@ -34,7 +98,35 @@
     </types>
     <types>
         <members>*</members>
-        <name>LightningComponentBundle</name>
+        <name>LightningExperienceTheme</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ManagedTopics</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>NetworkBranding</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PathAssistant</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
     </types>
     <types>
         <members>*</members>
@@ -42,11 +134,15 @@
     </types>
     <types>
         <members>*</members>
+        <name>ProfilePasswordPolicy</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ProfileSessionSetting</name>
     </types>
     <types>
         <members>*</members>
-        <name>ProfilePasswordPolicy</name>
+        <name>RecordType</name>
     </types>
     <types>
         <members>*</members>
@@ -54,115 +150,22 @@
     </types>
     <types>
         <members>*</members>
-        <name>SharingRules</name>
-    </types>
-     <types>
-        <members>AppSwitcher</members>
-        <name>AppMenu</name>
+        <name>Settings</name>
     </types>
     <types>
-        <members>Dealership</members>
-        <name>CustomApplication</name>
+        <members>*</members>
+        <name>SharingOwnerRule</name>
     </types>
     <types>
-        <members>Appointment__c.Contact__c</members>
-        <members>Appointment__c.Description__c</members>
-        <members>Appointment__c.Opportunity__c</members>
-        <members>Appointment__c.Order__c</members>
-        <members>Appointment__c.Salesperson__c</members>
-        <members>Appointment__c.Time__c</members>
-        <members>Appointment__c.Type__c</members>
-        <members>Case.AccountId</members>
-        <members>Case.AssetId</members>
-        <members>Case.AssetWarrantyId</members>
-        <members>Case.BusinessHoursId</members>
-        <members>Case.ClosedDate</members>
-        <members>Case.Comments</members>
-        <members>Case.ContactEmail</members>
-        <members>Case.ContactFax</members>
-        <members>Case.ContactId</members>
-        <members>Case.ContactMobile</members>
-        <members>Case.ContactPhone</members>
-        <members>Case.Description</members>
-        <members>Case.EntitlementId</members>
-        <members>Case.IsClosedOnCreate</members>
-        <members>Case.IsEscalated</members>
-        <members>Case.IsStopped</members>
-        <members>Case.MilestoneStatus</members>
-        <members>Case.MilestoneStatusIcon</members>
-        <members>Case.Origin</members>
-        <members>Case.OwnerId</members>
-        <members>Case.ParentId</members>
-        <members>Case.Price_Book__c</members>
-        <members>Case.Priority</members>
-        <members>Case.ProductId</members>
-        <members>Case.Reason</members>
-        <members>Case.ServiceContractId</members>
-        <members>Case.SlaExitDate</members>
-        <members>Case.SlaStartDate</members>
-        <members>Case.Status</members>
-        <members>Case.StopStartDate</members>
-        <members>Case.Subject</members>
-        <members>Case.SuppliedCompany</members>
-        <members>Case.SuppliedEmail</members>
-        <members>Case.SuppliedName</members>
-        <members>Case.SuppliedPhone</members>
-        <members>Case.Type</members>
-        <members>Opportunity.ContractId</members>
-        <members>Service_Part__c.Order__c</members>
-        <members>Service_Part__c.Vehicle_Part__c</members>
-        <members>Vehicle_Part__c.Description__c</members>
-        <members>Vehicle_Part__c.Part_Code__c</members>
-        <members>Vehicle_Part__c.Part_Number__c</members>
-        <members>Vehicle_Part__c.Product__c</members>
-        <name>CustomField</name>
+        <members>*</members>
     </types>
     <types>
-        <members>Vehicle_Part__c.Part_Number__c</members>
-        <name>CustomIndex</name>
+        <members>*</members>
+        <name>SiteDotCom</name>
     </types>
     <types>
-        <members>Appointment__c</members>
-        <members>Case</members>
-        <members>Service_Part__c</members>
-        <members>Vehicle_Part__c</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>Appointment__c</members>
-        <members>Service_Part__c</members>
-        <members>Vehicle_Part__c</members>
-        <name>CustomTab</name>
-    </types>
-    <types>
-        <members>Dealership_UtilityBar</members>
-        <name>FlexiPage</name>
-    </types>
-    <types>
-        <members>Appointment__c-Appointment Layout</members>
-        <members>Appointment__c-Sales Appointment</members>
-        <members>Appointment__c-Service Appointment</members>
-        <members>Case-Case %28Marketing%29 Layout</members>
-        <members>Case-Case %28Sales%29 Layout</members>
-        <members>Case-Case %28Support%29 Layout</members>
-        <members>Case-Case Layout</members>
-        <members>CaseClose-Close Case Layout</members>
-        <members>Opportunity-Opportunity %28Marketing%29 Layout</members>
-        <members>Opportunity-Opportunity Layout</members>
-        <members>Service_Part__c-Service Part Layout</members>
-        <members>Vehicle_Part__c-Vehicle Part Layout</members>
-        <name>Layout</name>
-    </types>
-    <types>
-        <members>Appointment__c.All</members>
-        <members>Service_Part__c.All</members>
-        <members>Vehicle_Part__c.All</members>
-        <name>ListView</name>
-    </types>
-    <types>
-        <members>Appointment__c.Sales_Appointment</members>
-        <members>Appointment__c.Service_Appointment</members>
-        <name>RecordType</name>
+        <members>*</members>
+        <name>StaticResource</name>
     </types>
     <version>54.0</version>
 </Package>
