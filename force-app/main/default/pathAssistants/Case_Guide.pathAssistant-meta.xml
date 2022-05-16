@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Case Guide</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Include any further details on why this case was escalated. Ensure client knows next steps.&lt;/p&gt;</info>
+        <picklistValueName>Escalated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>CaseNumber</fieldNames>
+        <fieldNames>Origin</fieldNames>
+        <fieldNames>Reason</fieldNames>
+        <fieldNames>CreatedDate</fieldNames>
+        <fieldNames>Description</fieldNames>
+        <info>&lt;p&gt;Make sure all required information is gathered. Reach out to clients ASAP for any missing info.&lt;/p&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Follow case rules as close as possible. Reach out or escalate the case if needed.&lt;/p&gt;&lt;p&gt;Research Chatter group discussion posts if needed, otherwise, you are welcome to create your own post!&lt;/p&gt;</info>
+        <picklistValueName>Working</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>
