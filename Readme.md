@@ -1,13 +1,13 @@
 ## Koenigsegg Supercar Dealership
 ## Project Description
    Salesforce application facilitating sales and service functions for a Koenigsegg dealership
-Technologies Used
+## Technologies Used
 •	Salesforce and Apex API – version 54.0
-Features
+## Features
 •	Community Experience Site
 •	Request for Information Page
 •	Appointment Book showing daily appointments 
-o	Featuring scrolling through appointments by day
+o	   *Featuring scrolling through appointments by day
 •	Auto-generated email alerts on appointment changes
 •	Auto-generated email alerts on RFIs
 •	Auto-generation of internal work orders
@@ -16,10 +16,10 @@ o	Featuring scrolling through appointments by day
 •	Fully implemented security at all levels – org, object, record, and field levels
 •	Custom lightning app for the dealership
 •	Fully configured sales and service clouds
-o	Auto-assigned leads and cases
-o	Auto-escalated cases based on priority rating
+o	   *Auto-assigned leads and cases
+o	   *Auto-escalated cases based on priority rating
 
-Upcoming Features:
+## Upcoming Features:
 •	Additions to the community site to provide enhanced user interaction
 •	Additional background automation using Apex to provide for a more seamless user experience with auto-generated and updated records
 
