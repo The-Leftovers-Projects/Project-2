@@ -14,7 +14,7 @@ public class TestapptController {
         Integer count = 0;
         for(Appointment__c ap : apContr.salesByDate) {
         	String apDate = ap.Time__c.date().format();
-           		if(apDate == '5/12/2022') {
+           		if(apDate == '5/18/2022') {
                 	count++;
             	}
         }
@@ -31,7 +31,7 @@ public class TestapptController {
         Integer count = 0;
         for(Appointment__c ap : apContr.salesByDate) {
         	String apDate = ap.Time__c.date().format();
-           		if(apDate == '5/13/2022') {
+           		if(apDate == '5/19/2022') {
                 	count++;
             	}
         }
@@ -48,7 +48,7 @@ public class TestapptController {
         Integer count = 0;
         for(Appointment__c ap : apContr.salesByDate) {
         	String apDate = ap.Time__c.date().format();
-           		if(apDate == '5/11/2022') {
+           		if(apDate == '5/17/2022') {
                 	count++;
             	}
         }

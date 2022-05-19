@@ -20,7 +20,7 @@ public class TestData {
             Decimal x = Math.random();
             Decimal y = (x * n).round(System.RoundingMode.FLOOR);
             Integer j = (Integer)y;
-            Decimal randDay = (x * 14).round(System.RoundingMode.FLOOR) + 10;
+            Decimal randDay = (x * 14).round(System.RoundingMode.FLOOR) + 14;
        	    Decimal randHr = (x * 7).round(System.RoundingMode.FLOOR) + 9;
             Decimal randMn = (x * 59).round(System.RoundingMode.FLOOR);
             String amPM;
@@ -41,7 +41,7 @@ public class TestData {
 			ap.Time__c = aptTime;
 			ap.Type__c = 'Sales';
             ap.Description__c = 'This is appointment # ' + i;
-            ap.Salesperson__c = 'Sally Salesperson';
+            ap.Salesperson__c = '005AU000000ABWrYAO';
 			appmnt.add(ap);            
         }
         insert appmnt;
