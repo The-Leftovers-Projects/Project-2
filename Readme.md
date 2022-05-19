@@ -17,11 +17,11 @@
 	* Custom lightning app for the dealership
 	* Fully configured sales and service clouds
 	   * Auto-assigned leads and cases
-   * Auto-escalated cases based on priority rating
+   	* Auto-escalated cases based on priority rating
 
 ## Upcoming Features:
-•	Additions to the community site to provide enhanced user interaction
-•	Additional background automation using Apex to provide for a more seamless user experience with auto-generated and updated records
+	*Additions to the community site to provide enhanced user interaction	
+	*Additional background automation using Apex to provide for a more seamless user experience with auto-generated and updated records
 
 
 
