@@ -30,7 +30,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MyFirstClassAnna</apexClass>
+        <apexClass>CaseTester</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -38,12 +38,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TestApptUtility</apexClass>
         <apexClass>DataFactory</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TestClass</apexClass>
+        <apexClass>ProductHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -232,7 +231,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Event.Description</field>
         <field>Opportunity.AccountId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -359,10 +357,6 @@
         <layout>CaseClose-Close Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>PricebookEntry-Price Book Entry Layout</layout>
         <layout>Inspection_Order__c-Inspection Order Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -402,6 +396,24 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>NewApptEvent__e</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Opportunity</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Service_Part__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -426,6 +438,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Appointment__c.Service_Appointment</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Opportunity.Car_Sale</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
