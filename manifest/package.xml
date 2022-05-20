@@ -2,6 +2,10 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>*</members>
+        <name>AnimationRule</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -14,11 +18,15 @@
     </types>
     <types>
         <members>*</members>
-        <name>ApexTestSuite</name>
+        <name>ApexTrigger</name>
     </types>
     <types>
         <members>*</members>
-        <name>ApexTrigger</name>
+        <name>AppMenu</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Audience</name>
     </types>
     <types>
         <members>*</members>
@@ -26,7 +34,63 @@
     </types>
     <types>
         <members>*</members>
+        <name>BrandingSet</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ContentAsset</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CspTrustedSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomIndex</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>FieldRestrictionRule</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Flow</name>
     </types>
     <types>
         <members>*</members>
@@ -34,7 +98,35 @@
     </types>
     <types>
         <members>*</members>
-        <name>LightningComponentBundle</name>
+        <name>LightningExperienceTheme</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ManagedTopics</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>NetworkBranding</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PathAssistant</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
     </types>
     <types>
         <members>*</members>
@@ -42,11 +134,15 @@
     </types>
     <types>
         <members>*</members>
+        <name>ProfilePasswordPolicy</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ProfileSessionSetting</name>
     </types>
     <types>
         <members>*</members>
-        <name>ProfilePasswordPolicy</name>
+        <name>RecordType</name>
     </types>
     <types>
         <members>*</members>
@@ -279,4 +375,23 @@
         <name>WorkflowAlert</name>
     </types>
      <version>53.0</version>
+</Package>
+        <name>Settings</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>SharingOwnerRule</name>
+    </types>
+    <types>
+        <members>*</members>
+    </types>
+    <types>
+        <members>*</members>
+        <name>SiteDotCom</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    <version>54.0</version>
 </Package>

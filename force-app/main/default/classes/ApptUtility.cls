@@ -4,7 +4,7 @@ public class ApptUtility {
         for(Appointment__c appt : newAppts) {
             for(Appointment__c a : ExistingAppts) {
                 if(appt.Salesperson__c == a.Salesperson__c && appt.Time__c == a.Time__c) {
-                    throw new BookingException('An appointment already exists at this time with this salesperon');
+                    throw new BookingException('An appointment already exists at this time with this salesperson');
                 } 
             }
         }
