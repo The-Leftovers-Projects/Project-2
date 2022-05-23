@@ -6,13 +6,23 @@
 ## Features
 	* Community Experience Site
 	* Request for Information Page
+	![image](https://user-images.githubusercontent.com/102083901/169882745-ee52fec6-d919-4860-93a4-b68ec8fb17aa.png)
+
 	* Appointment Book showing daily appointments 
 	   * Featuring scrolling through appointments by day
-	* Auto-generated email alerts on appointment changes
-	* Auto-generated email alerts on RFIs
+	   ![image](https://user-images.githubusercontent.com/102083901/169882593-54b8040c-b081-4c57-aba7-c6161a0f1453.png)
+
+	* Auto-generated chatter alerts on appointment changes
+	![image](https://user-images.githubusercontent.com/102083901/169882963-a9d2f91f-0cb1-441e-b921-86ad2f8ea985.png)
+
+	* Auto-generated tasks on RFIs
+	![image](https://user-images.githubusercontent.com/102083901/169883167-93789b79-a55d-4f7f-a89d-9b79ead6b6f3.png)
+
 	* Auto-generation of internal work orders
 	* Prevent deletion of active service orders
 	* Prevent double-booking of appointments
+	![image](https://user-images.githubusercontent.com/102083901/169883692-60c821e7-9cb7-4bd0-85af-2cc93faae74a.png)
+
 	* Fully implemented security at all levels – org, object, record, and field levels
 	* Custom lightning app for the dealership
 	* Fully configured sales and service clouds
