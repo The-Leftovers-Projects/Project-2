@@ -38,6 +38,8 @@
 git clone https://github.com/The-Leftovers-Projects/Project-2 path/to/SFDX-Project/here
 ```
 3. Authorize a Dev Hub
-4. Create a Default Scratch Org
-5. Push Source to Scratch Org
-6. Open Org in a new window
+4. ![image](https://user-images.githubusercontent.com/102083901/169880997-594bbc23-3939-4cfe-afd9-d6acc62eb0b1.png)
+
+5. Create a Default Scratch Org
+6. Push Source to Scratch Org
+7. Open Org in a new window
