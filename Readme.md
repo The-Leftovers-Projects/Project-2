@@ -42,5 +42,5 @@ git clone https://github.com/The-Leftovers-Projects/Project-2 path/to/SFDX-Proje
 
 5. Create a Default Scratch Org
 6. Push Source to Scratch Org
-7. Open Org in a new window (click on the menu icon next to the plug with the project name nex to it)
+7. Open Org in a new window (click on the menu icon to the left of the plug with the project name next to it)
 ![image](https://user-images.githubusercontent.com/102083901/169881795-4a859e11-f79a-4c7a-ac2f-80a26009c938.png)
