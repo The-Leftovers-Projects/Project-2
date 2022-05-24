@@ -43,3 +43,14 @@ git clone https://github.com/The-Leftovers-Projects/Project-2 path/to/SFDX-Proje
 6. Push Source to Scratch Org
 7. Open Org in a new window (click on the menu icon to the left of the plug with the project name next to it)
 ![image](https://user-images.githubusercontent.com/102083901/169881795-4a859e11-f79a-4c7a-ac2f-80a26009c938.png)
+
+## Usage
+* From the app menu, click on the customized Dealership app
+![image](https://cdn.discordapp.com/attachments/978667841156947968/978668593409568768/Screen_Shot_2022-05-24_at_9.37.03_AM.png)
+* Begin by creating a new appointment from the appointment tab
+![image](https://cdn.discordapp.com/attachments/978667841156947968/978669098907107328/Screen_Shot_2022-05-24_at_9.41.23_AM.png)
+
+## Contributors
+* Anna Phung
+* Rhys Kim
+* David Fondale
