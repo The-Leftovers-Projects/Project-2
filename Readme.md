@@ -1,36 +1,43 @@
-## Koenigsegg Supercar Dealership
+# Koenigsegg Supercar Dealership
+
 ## Project Description
-   Salesforce application facilitating sales and service functions for a Koenigsegg dealership
+Salesforce application facilitating sales and service functions for a Koenigsegg dealership
+
 ## Technologies Used
-	Salesforce and Apex API – version 54.0
+* Salesforce
+* Apex API – version 54.0
+* Flows
+* Apex Triggers
+* Platform Events
+* Visualforce
+
 ## Features
-	* Community Experience Site
-	* Request for Information Page
-	* Appointment Book showing daily appointments 
-	   * Featuring scrolling through appointments by day
-	* Auto-generated chatter alerts on appointment changes
-	* Auto-generated tasks on RFIs
-	* Auto-generation of internal work orders
-	* Prevent deletion of active service orders
-	* Prevent double-booking of appointments
-	* Fully implemented security at all levels – org, object, record, and field levels
-	* Custom lightning app for the dealership
-	* Fully configured sales and service clouds
-	* Auto-escalated cases based on priority rating
+Available features:
+* Community Experience Site
+* Request for Information Page
+* Appointment Book showing daily appointments 
+   * Featuring scrolling through appointments by day
+* Auto-generated chatter alerts on appointment changes
+* Auto-generated tasks on RFIs
+* Auto-generation of internal work orders
+* Prevent deletion of active service orders
+* Prevent double-booking of appointments
+* Fully implemented security at all levels – org, object, record, and field levels
+* Custom lightning app for the dealership
+* Fully configured sales and service clouds
+* Auto-escalated cases based on priority rating
 
-## Upcoming Features:
-	*Additions to the community site to provide enhanced user interaction	
-	*Additional background automation using Apex to provide for a more seamless user experience with auto-generated and updated records
+Upcoming features:
+* Additions to the community site to provide enhanced user interaction	
+* Additional background automation using Apex to provide for a more seamless user experience with auto-generated and updated records
 
+## Getting Started
 
-
-# Getting Started
-
-## Prerquisites
+### Prerequisites
 * Visual Studio Code
 * Salesforce Extension Pack
 
-## Steps
+### Steps
 1. Create a Standard template SFDX Project with Manifest
 2. Run this command:
 ```bash
